@@ -2,10 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base
-  - ingress.yaml
+- ../../base
+- ingress.yaml
 
 images:
-  - name: my-nextjs-image
-    newName: 036333380579.dkr.ecr.ap-northeast-1.amazonaws.com/kwonjh0406/seuneuseu-frontend
-    newTag: latest
+- name: my-nextjs-image
+  newName: 036333380579.dkr.ecr.ap-northeast-1.amazonaws.com/kwonjh0406/seuneuseu-frontend
+  newTag: c6ff308bed4a197226f202e6be9a39a3fb292cef
