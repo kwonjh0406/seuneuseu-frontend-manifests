@@ -3,8 +3,14 @@ kind: Ingress
 metadata:
   name: seuneuseu-frontend-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
+    # 1. Nginx 대신 ALB를 사용하도록 변경
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    
+    # 2. (중요) 타겟 타입을 지정 (일반적으로 'ip' 권장)
+    alb.ingress.kubernetes.io/target-type: ip
 spec:
+  # 3. 인그레스 클래스를 'alb'로 명시
+  ingressClassName: alb
   rules:
   - host: dev-front.seuneuseu.com
     http:
